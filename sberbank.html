@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Тестовое задание</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<style>
+  h3 {
+    box-shadow: #0a0a0a;
+  }
+
+  .system_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+    padding: 4px 8px 4px 8px;
+  }
+
+  .system_item:hover {
+    background-color: rgba(103, 106, 108, .1);
+  }
+
+  .list_item {
+     height: 30px;
+  }
+
+</style>
+
+<body>
+
+<div style="display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;">
+    <div style="width: 700px; height: 400px; background-color: white; box-shadow: 0 16px 64px 0 rgba(0, 0, 0, .3);">
+      <div style="padding: 1px 0 4px 16px; background-color: rgba(209, 218, 222, .4);"><h2 style="margin-top: 16px;">Сбои в автоматизированных системах</h2></div>
+      <div style="margin: 12px 16px 0 16px; display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 12px; border-bottom: solid 1px rgba(209, 218, 222, .5);">
+        <div style="line-height: 24px;">
+          <div class="btn-group">
+            <button class="btn btn-primary btn-xs" type="button">Все системы</button>
+            <button class="btn btn-white btn-xs" type="button" style="border-left: none;">Только самые важные</button>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: row;">
+          <div style="line-height: 24px;">Данные за:</div>
+          <div class="btn-group" style="margin-left: 8px;">
+            <button class="btn btn-white btn-xs" type="button">7 дн</button>
+            <button class="btn btn-white btn-xs" type="button">30 дн</button>
+            <button class="btn btn-primary btn-xs" type="button">90 дн</button>
+          </div>
+        </div>
+      </div>
+      <div style="margin: 16px 8px 0 8px; display: flex; flex-direction: row;">
+        <div style="flex: 1; height: 275px; overflow-y: scroll; padding-bottom: 40px;">
+          <div class="system_item">
+            <div style="flex: 1">ЕКС</div>
+            <div><span id="sparkline_001"></span></div>
+            <div style="text-align: right; width: 32px;">6</div>
+          </div>
+          <div class="system_item">
+            <div style="flex: 1">Сбербанк Корпор@ция</div>
+            <div><span id="sparkline_002"></span></div>
+            <div style="text-align: right; width: 32px;">1</div>
+          </div>
+          <div class="system_item">
+            <div style="flex: 1">ППРБ - Депозиты ЮЛ</div>
+            <div><span id="sparkline_003"></span></div>
+            <div style="text-align: right; width: 32px;">25</div>
+          </div>
+          <div class="system_item">
+            <div style="flex: 1">Mass Pay</div>
+            <div><span id="sparkline_004"></span></div>
+            <div style="text-align: right; width: 32px;">24</div>
+          </div>
+          <div class="system_item">
+            <div style="flex: 1">Way4</div>
+            <div><span id="sparkline_005"></span></div>
+            <div style="text-align: right; width: 32px;">22</div>
+          </div>
+          <div class="system_item">
+            <div style="flex: 1">Smart Vista</div>
+            <div><span id="sparkline_006"></span></div>
+            <div style="text-align: right; width: 32px;">14</div>
+          </div>
+          <div class="system_item">
+            <div style="flex: 1">Система интеграции УС</div>
+            <div><span id="sparkline_007"></span></div>
+            <div style="text-align: right; width: 32px;">4</div>
+          </div>
+          <div class="system_item">
+            <div style="flex: 1">СББОЛ</div>
+            <div><span id="sparkline_008"></span></div>
+            <div style="text-align: right; width: 32px;">3</div>
+          </div>
+          <div class="system_item">
+            <div style="flex: 1">Централизованное сопровож…</div>
+            <div><span id="sparkline_009"></span></div>
+            <div style="text-align: right; width: 32px;">2</div>
+          </div>
+          <div class="system_item">
+            <div style="flex: 1">ФЛ.06_Проведение коммуна…</div>
+            <div><span id="sparkline_010"></span></div>
+            <div style="text-align: right; width: 32px;">1</div>
+          </div>
+          <div class="system_item">
+            <div style="flex: 1">ППРБ - Расчетно-кассовое</div>
+            <div><span id="sparkline_011"></span></div>
+            <div style="text-align: right; width: 32px;">4</div>
+          </div>
+          <div class="system_item">
+            <div style="flex: 1">Единая Фронтальная Система</div>
+            <div><span id="sparkline_012"></span></div>
+            <div style="text-align: right; width: 32px;">1</div>
+          </div>
+        </div>
+        <div style="width: 260px; display: flex; justify-content: center;">
+          <div id="morris-donut-chart" style="width: 240px; height: 240px; margin: 0;"></div>
+        </div>
+        <div style="width: 440px; height: 40px; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);; position: absolute; margin-top: 235px;">
+        </div>
+      </div>
+    </div>
+</div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Sparkline -->
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Sparkline demo data -->
+    <script src="js/demo/sparkline-demo.js"></script>
+
+    <!-- Morris -->
+    <script src="js/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="js/plugins/morris/morris.js"></script>
+
+    <!-- Morris demo data-->
+    <!--<script src="js/demo/morris-demo.js"></script>-->
+
+<script>
+
+  new Morris.Donut({
+    element: 'morris-donut-chart',
+    data: [
+      { label: "ППРБ -\nДепозиты ЮЛ", value: 23 },
+      { label: "Mass Pay\n ", value: 22 },
+      { label: "Way4\n\n", value: 20 },
+      { label: "Smart Vista", value: 13 },
+      { label: "ЕКС\n ", value: 6},
+      { label: "Система\nинтеграции УС", value: 4 },
+      { label: "ППРБ -\nРасчетно-кассовое", value: 4 },
+      { label: "СББОЛ", value: 3 },
+      { label: "Централизованное\nсопровож…", value: 2 },
+      { label: "Сбербанк\nКорпор@ция", value: 1 },
+      { label: "ФЛ.06_Проведение\nкоммуна…", value: 1 },
+      { label: "Единая Фронтальная\nСистема", value: 1 }
+    ],
+    resize: true,
+    colors: ['rgb(135, 214, 198)'],
+    formatter: function (y, data) { return y + '%' }
+  });
+
+</script>
+
+<style>
+  svg text tspan {
+    font-family: 'open sans' !important;
+    /* fill: #ff0000; */
+    font-weight: 400;
+  }
+
+</style>
+
+</body>
+
+</html>
