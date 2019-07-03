@@ -1746,6 +1746,7 @@ Licensed under the BSD-2-Clause License.
     };
 
     Donut.prototype.select = function(idx) {
+      this.fire('selected', idx, this.data[idx]);
       var row, s, segment, _i, _len, _ref;
       _ref = this.segments;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -1782,7 +1783,6 @@ Licensed under the BSD-2-Clause License.
       text2bbox = this.text2.getBBox();
       // text2scale = Math.min(maxWidth / text2bbox.width, maxHeightBottom / text2bbox.height);
       text2scale = 1;
-      console.log(this.text2);
       return this.text2.attr({
         transform: "S" + text2scale + "," + text2scale + "," + (text2bbox.x + text2bbox.width / 2) + "," + (text2bbox.y + text2bbox.height)
       });
