@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<style>
+  .car_card {
+    background-color: white;
+    border-radius: 0;
+    border: none;
+    margin: 0 24px 0 0;
+    text-align: center;
+  }
+
+  .car_card:last-child {
+    margin: 0;
+  }
+
+  /*.car_card:hover {*/
+    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,.5);*/
+  /*}*/
+
+  .car_badge {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .card_bg {
+    /*z-index: 1;*/
+  }
+
+  .foreground {
+    z-index: 1;
+  }
+
+  .background {}
+
+  .foreground .row .car_card:hover + .background .row .card_bg {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
+  }
+
+</style>
+
+<body>
+
+<div style="display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;">
+  <div class="container" style="position: relative; padding: 0;">
+
+    <div style="display: flex; flex-direction: row-reverse;">
+
+    <div class="foreground" style="display: flex; flex-direction: column;">
+      <div class="row">
+        <div class="col-sm car_card car_badge">
+          <div></div>
+          <div><img src="bmwx.png"></div>
+        </div>
+        <div class="col-sm car_card car_badge">
+          <div>One of three columns<br>One of three columns<br>One of three columns<br>One of three columns<br></div>
+          <div><img src="bmwx.png"></div>
+        </div>
+        <div class="col-sm car_card car_badge">
+          <div></div>
+          <div><img src="bmwx.png"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm car_card">
+          BMW X
+        </div>
+        <div class="col-sm car_card">
+          BMW X
+        </div>
+        <div class="col-sm car_card">
+          BMW X<br>BMW X<br>BMW X<br>BMW X<br>BMW X<br>BMW X<br>BMW X<br>BMW X<br>BMW X<br>BMW X<br>
+        </div>
+      </div>
+    </div>
+
+    <div class="background" style="display: flex; flex-direction: column; position: absolute; height: 100%; width: 100%">
+      <div class="row" style="height: 100%;">
+        <div class="col-sm car_card card_bg" style="background-color: rgba(0,0,0,0);"></div>
+        <div class="col-sm car_card card_bg" style="background-color: rgba(0,0,0,0);"></div>
+        <div class="col-sm car_card card_bg" style="background-color: rgba(0,0,0,0);"></div>
+      </div>
+    </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!--<div style="display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;">-->
+  <!--<div class="container">-->
+
+    <!--<div class="row">-->
+      <!--<div class="col-sm car_card">-->
+        <!--<div class="car_badge">-->
+          <!--<div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<img src="bmwx.png">-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--BMW X-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--<div  class="col-sm car_card">-->
+        <!--<div class="car_badge">-->
+          <!--<div>-->
+            <!--Badge-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<img src="bmwx.png">-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--BMW X-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--<div class="col-sm car_card">-->
+        <!--<div class="car_badge">-->
+          <!--<div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<img src="bmwx.png">-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--BMW X<br>BMW X<br>BMW X<br>BMW X<br>BMW X<br>BMW X<br>BMW X<br>BMW X<br>BMW X<br>BMW X<br>-->
+        <!--</div>-->
+      <!--</div>-->
+
+    <!--</div>-->
+
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div style="display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;">-->
+  <!--<div class="container">-->
+
+    <!--<div class="row" style="align-items: baseline">-->
+      <!--<div class="col-sm car_card" style="display: flex; flex-direction: column;">-->
+        <!--<div></div>-->
+        <!--&lt;!&ndash;<div><img src="bmwx.png"></div>&ndash;&gt;-->
+        <!--<div>fff</div>-->
+      <!--</div>-->
+      <!--<div class="col-sm car_card" style="display: flex; flex-direction: column;">-->
+        <!--<div>fff<br>fff<br>fff<br>fff<br>fff</div>-->
+        <!--&lt;!&ndash;<div><img src="bmwx.png"></div>&ndash;&gt;-->
+        <!--<div>fff</div>-->
+      <!--</div>-->
+      <!--<div class="col-sm car_card" style="display: flex; flex-direction: column;">-->
+        <!--<div></div>-->
+        <!--&lt;!&ndash;<div><img src="bmwx.png"></div>&ndash;&gt;-->
+        <!--<div>fff<br>fff<br>fff<br>fff<br>fff<br>fff<br>fff<br>fff<br>fff</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+  <!--</div>-->
+<!--</div>-->
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+
+
+</body>
+
+</html>
